@@ -9,9 +9,9 @@ num=`cat $numPath/num`
 num=$(($num + 1)) 
 echo $num > $numPath/num
 name="$prefix/letter_$num.eml"
-while read line 
+while IFS= read line 
 do 
-echo $line >> $name
+echo "$line" >> $name
 done 
 chmod 777 $name
 /bin/true
