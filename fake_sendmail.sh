@@ -1,17 +1,17 @@
-#!/bin/sh 
-prefix="~/htdocs/sendmail/new"
-numPath="~/htdocs/sendmail"
+#!/bin/sh
+prefix="/home/USERNAME/sendmail/new"
+numPath="/home/USERNAME/sendmail"
 
-if [ ! -f $numPath/num ]; then 
-echo "0" > $numPath/num 
-fi 
-num=`cat $numPath/num` 
-num=$(($num + 1)) 
-echo $num > $numPath/num
-name="$prefix/letter_$num.eml"
-while IFS= read line 
-do 
+if [ ! -f $numPath/email_numbers ]; then
+echo "0" > $numPath/email_numbers
+fi
+emailNumbers=`cat $numPath/emailNumbers`
+emailNumbers=$(($emailNumbers + 1))
+echo $emailNumbers > $numPath/emailNumbers
+name="$prefix/letter_$emailNumbers.eml"
+while IFS= read line
+do
 echo "$line" >> $name
-done 
+done
 chmod 777 $name
 /bin/true
