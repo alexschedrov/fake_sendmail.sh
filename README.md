@@ -7,7 +7,7 @@ Very lightweight email catcher for LAMP. Works good on Ubuntu and on other Linux
 Usage
 ------------
 
-* Need update destination in script when do you want to place emails.
+* Need update destination in script where do you want to place emails.
 Example:
 ```
     prefix="/home/sanchiz/htdocs/sendmail/new"
