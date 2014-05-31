@@ -1,36 +1,43 @@
-## fake_sendmail.sh
+Fake sendmail
 ================
 
-Allows enable fake sendmail on LAMP.
+Very lightweight email catcher for LAMP. Works good on Ubuntu and on other Linux distributions. This shell script allows you to save email, which send your local web server. Emails will saved to separate folder, where you can debug your emails.
 
-## Usage
-========
 
-1. Edit destination in script when do you want to place letters.
+Usage
+------------
+
+* Need update destination in script when do you want to place emails. Example:
 Example:
 ```
     prefix="/home/sanchiz/htdocs/sendmail/new"
-```
-```
     numPath="/home/sanchiz/htdocs/sendmail"
 ```
-2. Set script as executable.
+
+*  Set script as executable.
+
 ```
     sudo chmod u+x,g+x fake_sendmail.sh
 ```
-3. Create symlink to /usr/bin.
+
+*  Create symlink to /usr/bin.
 ```
-    sudo ln -s /your_path/fake_sendmail.sh /usr/bin/fake_sendmail
+    sudo ln -s /YOUR-PATH/fake_sendmail.sh /usr/bin/fake_sendmail
 ```
-4. Add to php.ini.
+
+* Add to php.ini. In Ubuntu `/etc/php5/apache2/php.ini`.
 ```
     sendmail_path = fake_sendmail
 ```
-5. If you don't want create symlink, at once add to php.ini.
+
+* If you don't want create symlink, at once add to php.ini.
 ```
-    sendmail_path = /your_path/fake_sendmail.sh
+    sendmail_path = /YOUR-PATH/fake_sendmail.sh
 ```
-6. Restart apache.
+
+* Make sure what your script works, print in bash `fake_sendmail`, if there no errors, all ok.
+
+* Restart apache.
 ```
     sudo service apache2 restart
 ```
